@@ -1,0 +1,16 @@
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name = "listner.Listner">
+		</listener>
+	</listeners>
+  <test thread-count="5" name="Test">
+  
+  <classes>
+    <class name = "base.BaseClass"></class>
+  	<class name = "runners.TestRunner">
+  	</class>
+  </classes>
+  
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
