@@ -13,9 +13,8 @@ public class LoginPageActions
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
 	}
-
-	driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
 	
 	@FindBy(xpath= "//input[@data-qa='signup-name']")
 	WebElement namee;

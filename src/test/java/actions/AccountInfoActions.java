@@ -14,9 +14,8 @@ public class AccountInfoActions
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
 	}
-
-	driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
 	
 	@FindBy(xpath = "//div[@id='uniform-id_gender2']")
 	private WebElement titlee;
