@@ -1,5 +1,7 @@
 package base;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -14,6 +16,7 @@ public class BaseClass
 	public void openBrowser()
 	{
 		DriverFactory.openBrowser();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //implicit wait
 	}
 	
 	@AfterTest

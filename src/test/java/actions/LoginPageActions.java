@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPageActions 
 {
-	private static WebDriver driver = null;
+	private WebDriver driver = null;
 	
 	public LoginPageActions(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		//driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
+		
 	}
 	
 	@FindBy(xpath= "//input[@data-qa='signup-name']")

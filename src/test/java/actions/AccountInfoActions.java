@@ -1,20 +1,25 @@
 package actions;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class AccountInfoActions 
 {
-	private static WebDriver driver = null;
+	private WebDriver driver = null;
 	
 	public AccountInfoActions(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		//driver.manage().timouts().implicitylyWait(Duration.ofSeconds(5)); //implicit wait
+		
 	}
 	
 	@FindBy(xpath = "//div[@id='uniform-id_gender2']")
@@ -165,23 +170,36 @@ public class AccountInfoActions
 		zipcodee.sendKeys(data);
 	}
 
-	public void mobilenumber(String data)
+	public void mobilenumber(String data) throws InterruptedException
 	{
 		mobilenumberr.sendKeys(data);
+		//Thread.sleep(3000);
 	}
-
-	public void createaccount()
+	
+	public void createaccount() 
 	{
-		createaccountt.click();
-	}
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
+	    // wait until button is present & visible
+	    WebElement we = wait.until(ExpectedConditions.elementToBeClickable(createaccountt));
+	    createaccountt.click();
+	}
+	
 	public void continuebutton()
 	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	    // wait until button is present & visible
+	    WebElement we = wait.until(ExpectedConditions.elementToBeClickable(continuebuttonn));
 		continuebuttonn.click();
 	}
 
 	public void products()
 	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	    // wait until button is present & visible
+	    wait.until(ExpectedConditions.elementToBeClickable(productss));
 		productss.click();
 	}
 }

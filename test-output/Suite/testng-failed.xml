@@ -6,6 +6,11 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="base.BaseClass">
+        <methods>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- base.BaseClass -->
       <class name="runners.TestRunner">
         <methods>
           <include name="setUpClass"/>

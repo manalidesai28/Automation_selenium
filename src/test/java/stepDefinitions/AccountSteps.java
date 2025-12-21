@@ -16,7 +16,7 @@ public class AccountSteps
 	AccountInfoActions aia = new AccountInfoActions(driver);
 	
 	@Given("user enters details on account information page for creating account")
-	public void accountinfo()
+	public void accountinfo() throws InterruptedException
 	{
 		aia.title();
 		aia.password(ConfigReader.getData("password"));
